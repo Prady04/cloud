@@ -20,7 +20,7 @@ body {
 
 .left-slide {
   height: 100%;
-  width: 35%;
+  width: 15%;
   position: absolute;
   top: 0;
   left: 0;
@@ -47,36 +47,41 @@ body {
   height: 100%;
   position: absolute;
   top: 0;
-  left: 35%;
-  width: 65%;
+  left: 25%;
+  width: 75%;
   transition: transform 0.5s ease-in-out;
-}
-
-.right-slide > div {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100%;
   width: 100%;
 }
+
+
 .container {
   top:0;
-  left:35%;
-  width: 65%;
+  left:15%;
+  width:85%;
+  height: 100%;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
+  transition: transform 0.5s ease-in-out;
+  max-width: 100vw;
+  
  
 }
 .responsive-iframe {
-  
+  top:0;
   position:absolute;
-  left: 35%;  
-  width: 65%;
+  left: 15%;
   height: 100%;
-  background-position: center center;
-  overflow: hidden;
+  width: 85%;
+  overflow: hidden;  
   background-size: cover;
+  background-position: center center;
+  transition: transform 0.5s ease-in-out;
+  max-width: 100vw;
 }
 
 button {
@@ -98,7 +103,7 @@ button:focus {
 
 .slider-container .action-buttons button {
   position: absolute;
-  left: 35%;
+  left: 15%;
   top: 50%;
   z-index: 100;
 }
@@ -107,6 +112,8 @@ button:focus {
   transform: translateX(-100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  cursor:none;
+  
 }
 
 .slider-container .action-buttons .up-button {

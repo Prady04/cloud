@@ -1,23 +1,26 @@
 const sliderContainer = document.querySelector('.slider-container')
 const slideRight = document.querySelector('.right-slide')
-const slideLeft = document.querySelector('.left-slide')
+const slideLeft = document.querySelector('.right-slide')
 const upButton = document.querySelector('.up-button')
 const downButton = document.querySelector('.down-button')
-const slidesLength = slideRight.querySelectorAll('div').length
+const container = document.querySelectorAll('.responsive-iframe')
+const slidesLength = 3
 
 let activeSlideIndex = 0
 
-slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
 
 upButton.addEventListener('click', () => changeSlide('up'))
 downButton.addEventListener('click', () => changeSlide('down'))
 
 const changeSlide = (direction) => {
+   
     const sliderHeight = sliderContainer.clientHeight
     if(direction === 'up') {
         activeSlideIndex++
+        console.log(activeSlideIndex)
         if(activeSlideIndex > slidesLength - 1) {
             activeSlideIndex = 0
+            
         }
     } else if(direction === 'down') {
         activeSlideIndex--
@@ -25,7 +28,12 @@ const changeSlide = (direction) => {
             activeSlideIndex = slidesLength - 1
         }
     }
+    if (activeSlideIndex ==0) {
+        activeSlideIndex = 1;
+    }
+    factor = activeSlideIndex * sliderHeight
+    container[activeSlideIndex].style.transform = `translateY(-${factor}px)`
+    
 
-    slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
-    slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+ 
 }
